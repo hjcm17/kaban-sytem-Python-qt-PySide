@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget)
 from ui_login import Ui_tela_login
 from ui_main import Ui_MainWindow
 import sys
-import sqlite3
+from banco_de_dados import KanbanDB
 
 
 class Login(QWidget, Ui_tela_login):
@@ -17,6 +17,10 @@ class Login(QWidget, Ui_tela_login):
         # chamando clique no botão
         self.btn_acessar.clicked.connect(self.abrir_sistema)
 
+        
+
+
+    
 
     def abrir_sistema(self):
         # validação de credenciais
@@ -26,6 +30,8 @@ class Login(QWidget, Ui_tela_login):
             self.close()
         else:
             print('login ou senha inválida')
+        
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
